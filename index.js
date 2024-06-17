@@ -5,9 +5,16 @@ console.log("----------------------------------")
 
 while (true) {
 
+console.log(" ")
 let name = prompt("Nome do herói: ")
 let xp = prompt("Experiência do herói(xp): ");
 xp = eval(xp);
+
+if (typeof xp != "number") {
+  console.log("Valor incorreto. Tente novamente")
+  continue;
+}
+
 let rank = "Radiante"
 
 if (typeof xp === "number" && xp >= 0) {
@@ -48,7 +55,7 @@ if (typeof xp === "number" && xp >= 0) {
 }
 else {
   console.log("Valor incorreto. Tente novamente");
-  break;
+  continue;
 }
 
 
@@ -57,7 +64,6 @@ console.log("O Herói de nome " + name + " está no ranque " + rank);
 
 let willContinue = prompt("Desejas continuar? (S ou N) ");
 if (willContinue.toLowerCase() == "n") {
-  console.log("Olá");
   break;
 }
 
