@@ -21,6 +21,7 @@ if (typeof xp === "number" && xp >= 0) {
   
   switch (Math.ceil(xp/1000)) {
 
+    case 0:
     case 1:
       rank = "Ferro";
       break;
