@@ -5,37 +5,34 @@ console.log("----------------------------------")
 
 while (true) {
 
-console.log(" ")
-let name = prompt("Nome do herói: ")
-let xp = prompt("Experiência do herói(xp): ");
-xp = eval(xp);
-
-if (typeof xp != "number") {
-  console.log("Valor incorreto. Tente novamente")
-  continue;
-}
-
-let rank = "Radiante"
-
-if (typeof xp === "number" && xp >= 0) {
+  console.log(" ")
+  let name = prompt("Nome do herói: ")
+  let xp = parseFloat(prompt("Experiência do herói(xp): "));
   
+  if (isNaN(xp) || xp < 0) {
+    console.log("Valor incorreto. Tente novamente")
+    continue;
+  }
+    
+  let rank = "Radiante"
+
   switch (Math.ceil(xp/1000)) {
 
     case 0:
     case 1:
       rank = "Ferro";
       break;
-  
+
     case 2:
       rank = "Bronze";
       break;
-    
+
     case 3:
     case 4:
     case 5:
       rank = "Prata";
       break;
-    
+
     case 6:
     case 7:
       rank = "Ouro";
@@ -44,7 +41,7 @@ if (typeof xp === "number" && xp >= 0) {
     case 8:
       rank = "Platina";
       break;
-    
+
     case 9:
       rank = "Ascendente";
       break;
@@ -53,21 +50,12 @@ if (typeof xp === "number" && xp >= 0) {
       rank = "Imortal";
       break;
   }
-}
-else {
-  console.log("Valor incorreto. Tente novamente");
-  continue;
-}
 
+  console.log("O Herói de nome " + name + " está no ranque " + rank);
 
-console.log("O Herói de nome " + name + " está no ranque " + rank);
-
-
-let willContinue = prompt("Desejas continuar? (S ou N) ");
-if (willContinue.toLowerCase() == "n") {
-  break;
-}
-
-
+  let willContinue = prompt("Desejas continuar? (S ou N) ");
+  if (willContinue.toLowerCase() == "n") {
+    break;
+  }
 }
 
